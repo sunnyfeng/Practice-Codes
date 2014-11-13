@@ -1,14 +1,13 @@
-float x ,y,velY,velX,gravity, accX,sz;
+float x ,y,velY,velX,gravity,sz;
 
 
 void setup(){
   size(800,600);
-  x= 0;
-  y=0;
   sz=30;
+  x= sz/2;
+  y=sz/2;
   gravity=.75;
-  accX= .01;
-  velX= 0;
+  velX= 5;
   velY=0;
  
 }
@@ -18,22 +17,16 @@ void draw(){
   ellipse(x,y,sz,sz);
   
   velY+=gravity;
-  velX+=accX;
   x+= velX;
   y+=velY;
   
   if (y + sz/2 >= height){
-    velY= -abs(velY);
+    y=height-sz/2;
+    velY*=-.9;
   }
   
-  if (x+sz/2>= width){
-    velX=-abs(velX);
+  if (x+sz/2>= width || x-sz/2<=0){
+    velX*=-0.9;
   }
-  
-  if (x-sz/2<0){
-    velX=abs(velX);
-  }
-
-  
 }
 
