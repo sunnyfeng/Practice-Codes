@@ -1,8 +1,7 @@
 float locx, locy;
 float velx, vely;
 float accx, accy;
-int sz= 25;
-float x=0;
+int sz= 50;
 
 void setup(){
   size(800,600);
@@ -15,7 +14,6 @@ void setup(){
 }
 
 void draw(){
-  x++;
  // background(0);
   noStroke();
   fill(frameCount%360, 100,100);
