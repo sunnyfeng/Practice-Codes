@@ -2,8 +2,10 @@ int count = 1000;
 PVector [] loc = new PVector [count];
 PVector [] vel = new PVector [count];
 PVector [] acc = new PVector [count];
+float [] mass = new float [count];
 float [] sz = new float [count];
-//float sz = 20;
+int mindiam = 10;
+int maxdiam = 20;
 
 void setup(){
   size(800,600);
@@ -17,6 +19,8 @@ void setup(){
     //acc [i] = new PVector (sin(i),0);
    
     sz [i] = random(2,4);
+    
+    mass[i] = map(sz[i],mindiam,maxdiam,.1,2);
      
   }
   
@@ -40,26 +44,8 @@ void draw(){
   for (int j = 0; j< count; j++){
     if (i!= j){
       if (loc[i].dist(loc[j]) < sz[i]/2 + sz[j]/2){
-        print ( "COLLISION ");
-        if (loc[i].x < loc[j].x){
-          vel[i].x = -abs(vel[i].x);
-          vel[j].x = abs(vel[j].x);
-          //fill (255,0,0);
-        } else {
-          vel[i].x = abs(vel[i].x);
-          vel[j].x = -abs(vel[j].x);
-          //fill(0,255,0);
-        }
-        
-         if (loc[i].y < loc[j].y){
-          vel[i].y = -abs(vel[i].y);
-          vel[j].y = abs(vel[j].y);
-          //fill(255,0,0);
-        } else {
-          vel[i].y = abs(vel[i].y);
-          vel[j].y = -abs(vel[j].y);
-          //fill(0,255,0);
-        }
+       vel[i] = PVector.sub(loc[i],loc[j]);
+       vel[i].setMag(2);
       }
     }
   }
