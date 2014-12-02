@@ -6,11 +6,18 @@ class Ball{
   
   Ball(){
     //initialize
-    loc = new PVector(width/2, height/2);
-    vel = PVector.random2D();
-    acc = new PVector(0, 0);
+    loc = new PVector(width/2,random(height));
+    vel = new PVector(random(-3,3),random(-1,0));
+    acc = new PVector(.001, .1);
     sz = random(10, 100);
     hue = random(360);
+  }
+  
+  void wraparound(){
+    if (loc.y -sz/2 > height){
+      loc.set(mouseX,mouseY);
+      vel.set(random(-3,3),random(-1,0));
+    }
   }
   
   void bounce(){
