@@ -6,7 +6,7 @@ class Ball{
   
   Ball(){
     //initialize
-    loc = new PVector(width/2,random(height));
+    loc = new PVector(mouseX,mouseY);
     vel = new PVector(random(-3,3),random(-1,0));
     acc = new PVector(.001, .1);
     sz = random(10, 100);

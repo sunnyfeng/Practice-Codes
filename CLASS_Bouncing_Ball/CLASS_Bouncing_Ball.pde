@@ -1,21 +1,20 @@
-int count = 200;
-
-Ball[] b = new Ball [count];
+ArrayList<Ball> balls = new ArrayList<Ball>();
 
 
 void setup() {
   size(displayWidth, displayHeight);
-  for (int i= 0; i < count; i++) {
-    b[i] = new Ball();
-  }
 }
 
 void draw() {
+  balls.add(new Ball());
   background(0);
-  for (int i= 0; i<count; i++) {
-    b[i].move();
-    b[i].wraparound();
-    b[i].display();
+  for (int i= 0; i<balls.size (); i++) {
+    Ball b = balls.get(i);
+    b.move();
+    b.display();
+    if (b.loc.y + b.sz/2 > height) {
+      balls.remove(i);
+    }
   }
 }
 
