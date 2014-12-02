@@ -1,4 +1,3 @@
-
 class Ball{
   //declare
   PVector loc, vel, acc;
