@@ -1,16 +1,21 @@
-Ball b;
+int count = 200;
 
-void setup(){
-  size(800,600);
-  b = new Ball();
+Ball[] b = new Ball [count];
+
+
+void setup() {
+  size(800, 600);
+  for (int i= 0; i < count; i++) {
+    b[i] = new Ball();
+  }
 }
 
-void draw(){
+void draw() {
   background(0);
-  b.move();
-  b.bounce();
-  b.display();
-  
+  for (int i= 0; i<count; i++) {
+    b[i].move();
+    b[i].bounce();
+    b[i].display();
+  }
 }
-
 
