@@ -11,7 +11,7 @@ class Particle{
     acc = new PVector(0,.1);
     sz = random(5,11);
     life = 255;
-    decay = 2;
+    decay = 200;
   }
   
   void move(){
@@ -20,12 +20,31 @@ class Particle{
   }
   
   void display(){
+    stroke(0,170,255);
     fill(0,150,255,life);
     ellipse(loc.x,loc.y,sz,sz);
   }
   
-  void update(){
+  void aging(){
     life-=decay;
+}
+  
+  void bounce(){
+    if (loc.x + sz/2 > width || loc.x - sz/2 < 0) {
+    vel.x *= -1;
+  }
+    if (loc.y + sz/2 > height || loc.y - sz/2 < 0) {
+    vel.y *= -1;
+  }
+  }
+  
+  void die(){
+    if (loc.x + sz/2 > width || loc.x - sz/2 < 0) {
+    life-=decay;
+  }
+  if (loc.y + sz/2 > height || loc.y - sz/2 < 0) {
+    life-=decay;
+  }
   }
   
   boolean isDead(){
@@ -36,11 +55,11 @@ class Particle{
     }
   }
   
-  void paint(){
-   if (mousePressed){
-     loc.set(mouseX,mouseY);
-  }
-}
+  //void paint(){
+  // if (mousePressed){
+  //   loc.set(mouseX,mouseY);
+  //}
+//}
 }
   
   
