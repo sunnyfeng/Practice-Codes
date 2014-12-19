@@ -8,8 +8,8 @@ class Opening{
     //initialize variables
     longness= templongness;                        //set how long of input and output
     depth= 30;                                     //set the height of the input and output
-    loc1 = new PVector(width,height);          //set location of input
-    loc2 = new PVector(200,200);              //set location of output
+    loc1 = new PVector(width/4,3*height/4);          //set location of input
+    loc2 = new PVector(500,300);              //set location of output
   }
   
   void display(){                                  //displays the openings
