@@ -10,7 +10,7 @@ class Present{
   Present(){
   //initialize
     loc = new PVector(mouseX,mouseY);
-    vel = new PVector(random(-2,2),random(-1,1));
+    vel = new PVector(random(-1,2),random(-1,2));
     acc = new PVector(0,.1);
     sz = random(20,30);
     life = 255;
@@ -29,12 +29,12 @@ class Present{
     image(gift,loc.x,loc.y,sz,sz);
   }
   
- // void aging(){                                       //How and why will the life decrease?
+ // void aging(){                                       //life decrease every frame
  //   life-=decay;
 //}
  
   
-  void die(){                                           //die when present out of screen
+  void leave(){                                           //die when present out of screen
     if (loc.x + sz/2 > width || loc.x - sz/2 < 0) {
     life-=decay;
   }

@@ -13,11 +13,13 @@ void setup() {
 }
 
 void draw() {
-  background(workshop);                                           //workshop picture set as the background
-  image(elffairy, mouseX - 90, mouseY - 30, 100, 102);    
+  background(workshop);                                              //workshop picture set as the background
+  fill(255,70);                                                       //make background lighter
+  rect(0,0,width,height);
+  image(elffairy, mouseX - 80, mouseY - 50, 100, 102);    
   ps.addPresent();
   ps.run();
   hole.display();
-  hole.tranports(ps);
+//  hole.tranports(ps);
 }
 

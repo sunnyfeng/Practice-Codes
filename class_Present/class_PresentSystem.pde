@@ -6,9 +6,9 @@ class PresentSystem {
   }
 
   void addPresent() {
-    //for (int i=0; i<3; i++) {                                             //making more presents per frame
+   // for (int i=0; i<3; i++) {                                             //making more presents per frame
     presents.add(new Present());                                           //adding new particle
-    //}
+   // }
   }
 
   void run() {
@@ -16,7 +16,7 @@ class PresentSystem {
       Present p = presents.get(i);                                         //get present from ArrayList
       p.display();                                                         //use methods (right word?)
       p.move();
-      p.die();
+      p.leave();
       if (p.isDead()) {                                                   //if the boolean function returned life < 0 as true...
         presents.remove(i);                                               //...remove the present
       }
