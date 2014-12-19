@@ -1,4 +1,5 @@
 ArrayList <Present> presents = new ArrayList <Present>();
+Opening hole;
 PImage workshop;
 PImage elffairy;
 
@@ -7,6 +8,7 @@ void setup() {
   noCursor();
   workshop = loadImage("workshop.jpg");
   elffairy = loadImage("elffairy.png");
+  hole  = new Opening(50);
 }
 
 void draw() {
@@ -25,6 +27,8 @@ void draw() {
     if (p.isDead()) {
       presents.remove(i);
     }
+    hole.display();
+    //hole.transport();
   }
 }
 
