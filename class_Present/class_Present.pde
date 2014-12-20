@@ -81,9 +81,9 @@ class Present {
   //INTERACT WITH SLEIGH
   int deliveredBy(Sleigh s) {
     
-    //IF IN CONTACT, INCREASE COUNT AND DIE
+    //IF IN CONTACT (WITH SLEIGH ONLY, NOT REINDEER), INCREASE COUNT AND DIE
     if (loc.y + sz/2 > s.loc.y) {
-      if (loc.x +sz/2 > s.loc.x) {
+      if (loc.x +sz/2 > s.loc.x && loc.x - sz/2 <width-s.sz.x/2) {
         count++;
         life-=decay;
 

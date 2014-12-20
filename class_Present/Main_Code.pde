@@ -1,3 +1,4 @@
+
 //DECLARE
 PresentSystem ps;
 PImage workshop;  
@@ -30,6 +31,7 @@ void setup() {
   elffairy = loadImage("elffairy.png");
 }
 
+
 void draw() {
   //SET BACKGROUND AS WORKSHOP IMAGE
   background(workshop);   
@@ -39,18 +41,25 @@ void draw() {
   rect(0,0,width,height);  
   
   //CALL METHODS
+  
+  //DIVISION
   div.display();
   div.block();  
+    
+  //SET ELF FAIRY IMAGE TO FOLLOW THE MOUSE
+  image(elffairy, mouseX - 80, mouseY - 50, 100, 102);
   
+  //PRESENT SYSTEM
   ps.addPresent();
   ps.run();
   
+  //OPENING
   hole.display();
+  hole.catchMeIfYouCan();
+  hole.stopBy(div);
   
+  //SLEIGH  
   sl.display();
-  
-  //SET ELF FAIRY IMAGE TO FOLLOW THE MOUSE
-  image(elffairy, mouseX - 80, mouseY - 50, 100, 102);
 }
 
 

@@ -41,6 +41,7 @@ class PresentSystem {
       p.display();       
       p.move();
       p.leave();
+      //p.aging();
       p.fallIn(hole);
       p.deliveredBy(sl);
       p.bounceOff(div);
