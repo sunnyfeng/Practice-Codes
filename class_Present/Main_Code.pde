@@ -2,12 +2,14 @@ PresentSystem ps;
 PImage workshop;                                                          //declare image
 PImage elffairy;
 Opening hole;
+Sleigh sl;
 
 void setup() {
   size(800, 384);                                                         //size of screen set to size of background picture
   noCursor();
   ps= new PresentSystem();
   hole = new Opening(100);
+  sl = new Sleigh();
   workshop = loadImage("workshop.jpg");                                   //assign image
   elffairy = loadImage("elffairy.png");
 }
@@ -20,6 +22,7 @@ void draw() {
   ps.addPresent();
   ps.run();
   hole.display();
+  sl.display();
 }
 
 void mousePressed(){  

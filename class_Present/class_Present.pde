@@ -2,7 +2,7 @@
 class Present{
 //declare
   PVector loc,vel,acc;
-  float sz;
+  PVector sz;
   float life;
   float decay;
   PImage gift;
@@ -12,7 +12,7 @@ class Present{
     loc = new PVector(mouseX,mouseY);
     vel = new PVector(random(-1,2),random(-1,2));
     acc = new PVector(0,.1);
-    sz = random(20,30);
+    sz = new PVector (random(20,30),random(20,30));
     life = 255;
     decay = 200;
     gift = loadImage("gift.png");                       //assign the present image as gift
@@ -26,7 +26,7 @@ class Present{
   void display(){                                       //display the present
    // stroke(0,170,255);
     fill(0,150,255,life);                               //fill 
-    image(gift,loc.x,loc.y,sz,sz);
+    image(gift,loc.x,loc.y,sz.x,sz.y);
   }
   
  // void aging(){                                       //life decrease every frame
@@ -58,6 +58,17 @@ class Present{
     }
 
   }
+  
+ int deliveredBy(Sleigh s){
+   int count = 0;
+    if(loc.dist(s.loc) < s.sz/2 + sz/2 ){
+      count++;
+      life-=decay;
+      println(count);
+    }
+      return count;
+  }
+
   
 }
   

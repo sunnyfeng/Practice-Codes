@@ -18,6 +18,7 @@ class PresentSystem {
       p.move();
       p.leave();
       p.fallIn(hole);
+      p.deliveredBy(sl);
       if (p.isDead()) {                                                   //if the boolean function returned life < 0 as true...
         presents.remove(i);                                               //...remove the present
       }
