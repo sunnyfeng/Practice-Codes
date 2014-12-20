@@ -8,9 +8,9 @@ class Opening {
   Opening(float templongness) {                       //set parameter of length of input
     //initialize variables
     longness= templongness;                        //set how long of input and output
-    depth= 20;                                     //set the height of the input and output
+    depth= 10;                                     //set the height of the input and output
     loc1 = new PVector(width/5, 7*height/8);          //set location of input
-    loc2 = new PVector(4*width/5, height/5);              //set location of output
+    loc2 = new PVector(3*width/4, height/5);              //set location of output
     candycane = loadImage("candy cane.PNG");
   }
 

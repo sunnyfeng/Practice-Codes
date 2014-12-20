@@ -2,7 +2,7 @@
 class Present{
 //declare
   PVector loc,vel,acc;
-  PVector sz;
+  float sz;
   float life;
   float decay;
   PImage gift;
@@ -12,7 +12,7 @@ class Present{
     loc = new PVector(mouseX,mouseY);
     vel = new PVector(random(-1,2),random(-1,2));
     acc = new PVector(0,.1);
-    sz = new PVector (random(20,30),random(20,30));
+    sz = random(20,30);
     life = 255;
     decay = 200;
     gift = loadImage("gift.png");                       //assign the present image as gift
@@ -26,7 +26,7 @@ class Present{
   void display(){                                       //display the present
    // stroke(0,170,255);
     fill(0,150,255,life);                               //fill 
-    image(gift,loc.x,loc.y,sz.x,sz.y);
+    image(gift,loc.x,loc.y,sz,sz);
   }
   
  // void aging(){                                       //life decrease every frame
@@ -54,22 +54,24 @@ class Present{
   void fallIn(Opening op){
     if (loc.dist(op.loc1) < op.depth/2 + sz/2){
       loc.set(random(op.loc2.x-op.longness/2+sz/2,op.loc2.x+op.longness/2-sz/2),op.loc2.y);
-      vel.set(random(-1,1),vel.y);
+      vel.set(random(-.05,.05),vel.y);
     }
 
   }
   
  int deliveredBy(Sleigh s){
-   int count = 0;
-    if(loc.dist(s.loc) < s.sz/2 + sz/2 ){
+    if(loc.y + sz/2 > s.loc.y){
+      if (loc.x +sz/2 > s.loc.x){
       count++;
       life-=decay;
-      println(count);
+      if (count >= need){
+        count = need;
+      }
+      }
     }
       return count;
   }
 
-  
 }
   
   
