@@ -51,6 +51,14 @@ class Present{
     }
   }
   
+  void fallIn(Opening op){
+    if (loc.dist(op.loc1) < op.depth/2 + sz/2){
+      loc.set(random(op.loc2.x-op.longness/2+sz/2,op.loc2.x+op.longness/2-sz/2),op.loc2.y);
+      vel.set(random(-1,1),vel.y);
+    }
+
+  }
+  
 }
   
   

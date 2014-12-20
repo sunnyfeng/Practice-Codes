@@ -20,7 +20,6 @@ void draw() {
   ps.addPresent();
   ps.run();
   hole.display();
-//  hole.tranports(ps);
 }
 
 void mousePressed(){  
