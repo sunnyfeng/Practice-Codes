@@ -6,7 +6,7 @@ Opening hole;
 void setup() {
   size(800, 384);                                                         //size of screen set to size of background picture
   noCursor();
-  ps = new PresentSystem();
+  ps= new PresentSystem();
   hole = new Opening(100);
   workshop = loadImage("workshop.jpg");                                   //assign image
   elffairy = loadImage("elffairy.png");
@@ -22,4 +22,9 @@ void draw() {
   hole.display();
 //  hole.tranports(ps);
 }
+
+void mousePressed(){  
+// Make it rain presents only when pressed
+  }
+
 

@@ -2,13 +2,13 @@ class PresentSystem {
   ArrayList <Present> presents;                                          //make an Arraylist for the presents                                                       // ^
 
   PresentSystem() {
-    presents = new ArrayList <Present>();  
+    presents = new ArrayList <Present>();
   }
 
   void addPresent() {
-   // for (int i=0; i<3; i++) {                                             //making more presents per frame
+    // for (int i=0; i<3; i++) {                               //making more presents per frame
     presents.add(new Present());                                           //adding new particle
-   // }
+    // }
   }
 
   void run() {
@@ -22,6 +22,5 @@ class PresentSystem {
       }
     }
   }
-  
 }
 

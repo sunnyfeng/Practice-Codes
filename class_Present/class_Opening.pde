@@ -25,7 +25,7 @@ class Opening {
   //  void transports(Present gift){                     //input transports presents to output
   //    if (loc1.dist(gift.loc) < depth/2 + gift.sz/2){  //if the gift "enters" the input...
   //      gift.loc.set(loc2);                            //...transport it to the output's location
-  //      gift.vel.set(0,gift.vel.y);                    //gift shoots downward out the output at the speed it entered
+  //      gift.vel.set(random(-1,1),gift.vel.y);                    //gift shoots downward out the output at the speed it entered
   //    }
   //  }
 
@@ -34,9 +34,9 @@ class Opening {
 //
 //        FIX! Won't interact with class of arraylist????
 //
-  void transports(PresentSystem ps) {
-    for (int i = ps.presents.size () - 1; i>= 0; i--) {
-      Present p = ps.presents.get(i);
+  void transports(PresentSystem sys) {
+    for (int i = sys.presents.size () - 1; i>= 0; i--) {
+      Present p = sys.presents.get(i);
       if (loc1.dist(p.loc) < depth/2 + p.sz/2) {          //if the gift "enters" the input...
         p.loc.set(loc2);                                      //...transport it to the output's location
         p.vel.set(random(-1,1), p.vel.y);                              //gift shoots down out the output at the speed it entered
