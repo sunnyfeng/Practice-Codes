@@ -71,6 +71,12 @@ class Present{
     }
       return count;
   }
+  
+  void bounceOff(Division d){
+    if (loc.x + sz/2 > d.loc.x){
+      vel.x = -abs(vel.x);
+    }
+  }
 
 }
   

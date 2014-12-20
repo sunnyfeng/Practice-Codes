@@ -1,10 +1,14 @@
 class PresentSystem {
   ArrayList <Present> presents;               //make an Arraylist for the presents
   int tSize;
+  String help, more, yay;
 
   PresentSystem() {
     presents = new ArrayList <Present>();
     tSize = 20;
+    help = "HELP! It's Christmas Eve and";
+    more = "Santa needs more presents!";
+    yay = "You saved Christmas!";
   }
 
   void addPresent() {
@@ -22,23 +26,26 @@ class PresentSystem {
       p.leave();
       p.fallIn(hole);
       p.deliveredBy(sl);
-      
+      p.bounceOff(div);
+      if (p.isDead()) {                                                   //if the boolean function returned life < 0 as true...
+        presents.remove(i);                                               //...remove the present
+      }
+
       //text
-      fill(100,0,150);
+      fill(255);
       textSize(50);
       stroke(10);
       textSize(tSize);
-      text("HELP!",width/5,height/8);
-      text("Santa needs more presents!",width/5,height/8+tSize);
-      text("He needs " + morePresents + " more presents!", width/5,height/8+2*tSize);
-      if (morePresents == 0){
-        textSize(50);
-        fill(0,140,40);
-        text("You saved Christmas!",width/2,height/2);
-      }
+      text(help, width/5, height/8);
+      text(more, width/5, height/8+tSize);
+      text("He needs " + morePresents + " more presents!", width/5, height/8+2*tSize);
       
-      if (p.isDead()) {                                                   //if the boolean function returned life < 0 as true...
-        presents.remove(i);                                               //...remove the present
+      //end
+      if (morePresents == 0) {
+        textSize(50);
+        stroke(40);
+        fill(250,0, 40);
+        text(yay, width/2, height/2);
       }
     }
   }
