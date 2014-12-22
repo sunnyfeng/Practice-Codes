@@ -1,3 +1,4 @@
+//CLASS OPENING
 class Opening {
   //DECLARE
   PVector loc1, loc2;

@@ -1,3 +1,4 @@
+//CLASS PRESENTSYSTEM
 class PresentSystem {
   //DECLARE
 
@@ -22,7 +23,9 @@ class PresentSystem {
   void addPresent() {
 
     // for (int i=0; i<3; i++) {    //MAKING MORE PRESENTS PER FRAME
+    
     presents.add(new Present()); 
+    
     // }
   }
 

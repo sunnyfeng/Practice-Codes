@@ -50,8 +50,9 @@ void draw() {
   image(elffairy, mouseX - 80, mouseY - 50, 100, 102);
   
   //PRESENT SYSTEM
-  ps.addPresent();
   ps.run();
+  ps.addPresent();
+  
   
   //OPENING
   hole.display();
@@ -61,5 +62,4 @@ void draw() {
   //SLEIGH  
   sl.display();
 }
-
 

@@ -1,3 +1,4 @@
+//CLASS SLEIGH
 class Sleigh {
   //DECLARE
   PVector loc;
